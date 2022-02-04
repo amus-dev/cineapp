@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import Button from "../../molecules/Button";
 // Themes images
 import Logo from "../../../assets/images/@icons/Logo";
-import { BLACK, ORANGE, WHITE } from "../../../theme/color";
+import { BLACK } from "../../../theme/color";
 
 const WelcomeTemplate = () => {
   const navigation = useNavigation();
@@ -15,8 +15,6 @@ const WelcomeTemplate = () => {
       <Button
         style={styles.btn}
         text="Comenzar"
-        bgButton={ORANGE}
-        textColor={WHITE}
         handleClick={() => navigation.navigate("signup")}
       />
     </View>

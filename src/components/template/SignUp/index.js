@@ -1,13 +1,21 @@
-import { StyleSheet, SafeAreaView, View } from "react-native";
+import { StyleSheet, SafeAreaView, View, ScrollView } from "react-native";
 import React from "react";
+
+// Organism
 import BackNavigate from "../../organism/BackNavigate";
+import SocialSignLogin from "../../organism/SocialSignLogin";
+import SignUpForm from "../../organism/SignUpForm";
 
 const SignUpTemplate = () => {
   return (
     <SafeAreaView>
-      <View style={styles.container}>
-        <BackNavigate url="welcome" text="Sign Up" />
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <BackNavigate url="welcome" text="Sign Up" />
+          <SocialSignLogin method="signUp" />
+          <SignUpForm />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
