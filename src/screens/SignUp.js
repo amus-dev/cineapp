@@ -1,6 +1,6 @@
 import { SafeAreaView, View, Text } from "react-native";
 import React from "react";
-import SignUpTemplate from "../components/template/SignUp";
+import SignUpTemplate from "../components/templates/SignUp";
 
 const SignUp = () => {
   return (

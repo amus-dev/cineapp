@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -8,32 +8,32 @@ import InputPassword from "../../molecules/InputPassword";
 import Button from "../../molecules/Button";
 import TextAccount from "../../molecules/TextAccount";
 
-const index = () => {
+const LogInForm = () => {
   const navigation = useNavigation();
+
   return (
     <View style={styles.form}>
       <View>
-        <InputText label="Name" placeholder="Enter your name" />
         <InputText label="Email" placeholder="Enter your email" />
         <InputPassword label="Password" placeholder="Enter your password" />
       </View>
       <View>
         <Button
           style={styles.btn}
-          text="Create Account"
+          text="Login"
           handleClick={() => navigation.navigate("signup")}
         />
         <TextAccount
-          description="Already have an account?"
-          outstanding="Login"
-          onClick={() => navigation.navigate("login")}
+          description="Don’t have an account?"
+          outstanding="Sign Up"
+          onClick={() => navigation.navigate("signup")}
         />
       </View>
     </View>
   );
 };
 
-export default index;
+export default LogInForm;
 
 const styles = StyleSheet.create({
   form: {

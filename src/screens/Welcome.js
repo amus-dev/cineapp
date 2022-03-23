@@ -1,6 +1,6 @@
 import { SafeAreaView } from "react-native";
 import React from "react";
-import WelcomeTemplate from "../components/template/Welcome";
+import WelcomeTemplate from "../components/templates/Welcome";
 
 const WelcomeScreen = () => {
   return (

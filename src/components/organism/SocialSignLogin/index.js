@@ -13,7 +13,9 @@ const index = ({ method }) => {
   return (
     <View style={styles.socialContainer}>
       <Text style={styles.socialDescription}>
-        Sign up with one of following options
+        {method === "signup"
+          ? "Sign up with one of following options"
+          : "Log in with one of following options"}
       </Text>
       <View style={styles.socialMethodContainer}>
         <TouchableOpacity

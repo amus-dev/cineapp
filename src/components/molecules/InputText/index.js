@@ -32,7 +32,7 @@ index.defaultProps = {
 const styles = StyleSheet.create({
   input: {
     backgroundColor: GRAY,
-    marginBottom: 40,
+    marginBottom: 20,
     color: MEDIUM_GRAY,
   },
 });

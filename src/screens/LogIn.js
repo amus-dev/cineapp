@@ -1,14 +1,8 @@
-import { SafeAreaView, Text, View } from "react-native";
 import React from "react";
+import LogInTemplate from "../components/templates/LogIn";
 
 const LogInScreen = () => {
-  return (
-    <SafeAreaView>
-      <View>
-        <Text>Login</Text>
-      </View>
-    </SafeAreaView>
-  );
+  return <LogInTemplate />;
 };
 
 export default LogInScreen;
