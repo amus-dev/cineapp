@@ -5,7 +5,7 @@ import { TextInput } from "react-native-paper";
 // Themes
 import { GRAY, GOLD, MEDIUM_GRAY } from "../../../theme/color";
 
-const index = ({ label, placeholder, onChange }) => {
+const index = ({ label, placeholder, onChange, value }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   return (
@@ -28,7 +28,8 @@ const index = ({ label, placeholder, onChange }) => {
           onPress={() => setIsVisible(!isVisible)}
         />
       }
-      onChangeText={(text) => console.log(text)}
+      value={value}
+      onChangeText={(text) => onChange(text)}
     />
   );
 };

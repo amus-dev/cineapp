@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, View, Text } from "react-native";
+import { StyleSheet, SafeAreaView, StatusBar, View } from "react-native";
 import React from "react";
 
 // Organism
@@ -9,6 +9,7 @@ import LogInForm from "../../organism/LogInForm";
 const LogInTemplate = () => {
   return (
     <SafeAreaView>
+      <StatusBar />
       <View style={styles.container}>
         <BackNavigate url="signup" text="Login" />
         <SocialSignLogin method="login" />

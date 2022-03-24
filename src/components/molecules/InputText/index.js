@@ -5,7 +5,7 @@ import { TextInput } from "react-native-paper";
 // Themes
 import { GRAY, GOLD, MEDIUM_GRAY } from "../../../theme/color";
 
-const index = ({ label, placeholder, onChange }) => {
+const index = ({ label, placeholder, onChange, value }) => {
   return (
     <TextInput
       label={label}
@@ -18,6 +18,7 @@ const index = ({ label, placeholder, onChange }) => {
           text: MEDIUM_GRAY,
         },
       }}
+      value={value}
       onChangeText={(text) => onChange(text)}
     />
   );
