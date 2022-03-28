@@ -4,10 +4,13 @@ import { NavigationContainer, DarkTheme } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 // Screens
-import Welcome from "../screens/Welcome";
-import SignUp from "../screens/SignUp";
-import LogIn from "../screens/LogIn";
+import WelcomeScreen from "../screens/Welcome";
+import SignUpScreen from "../screens/SignUp";
+import LogInScreen from "../screens/LogIn";
+import HomeScreen from "../screens/Home";
+
 const Stack = createStackNavigator();
+
 const Navigation = () => {
   return (
     <NavigationContainer theme={DarkTheme}>
@@ -15,17 +18,17 @@ const Navigation = () => {
         <Stack.Navigator>
           <Stack.Screen
             name="welcome"
-            component={Welcome}
+            component={WelcomeScreen}
             options={{ headerShown: false }}
           />
           <Stack.Screen
             name="signup"
-            component={SignUp}
+            component={SignUpScreen}
             options={{ headerShown: false }}
           />
           <Stack.Screen
             name="login"
-            component={LogIn}
+            component={LogInScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

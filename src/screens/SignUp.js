@@ -2,7 +2,7 @@ import { SafeAreaView } from "react-native";
 import React from "react";
 import SignUpTemplate from "../components/templates/SignUp";
 
-const SignUp = () => {
+const SignUpScreen = () => {
   return (
     <SafeAreaView>
       <SignUpTemplate />
@@ -10,4 +10,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpScreen;

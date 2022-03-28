@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 //Firebase Functions
-import { createAccount } from "../../../utilities/firebaseFunction";
+import { createAccount, viewError } from "../../../utilities";
 
 //Molecules
 import Toast from "../../molecules/Toast";
@@ -19,15 +19,18 @@ const index = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleClickCreateAccount = () => {
-    createAccount(email, password).then((response) => {
+  const handleClickCreateAccount = async () => {
+    try {
+      const response = await createAccount(email, password);
       if (response.uid) {
         cleanInputs();
         toastRef.current.show("¡Cuenta creada!", 1000, () => {
           navigation.navigate("login");
         });
       }
-    });
+    } catch (error) {
+      toastRef.current.show(viewError(error));
+    }
   };
 
   const cleanInputs = () => {
