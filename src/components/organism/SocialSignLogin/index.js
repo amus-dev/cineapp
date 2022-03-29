@@ -9,7 +9,7 @@ import Google from "../../../assets/images/@icons/Google";
 import { MEDIUM_GRAY, GRAY } from "../../../theme/color";
 import { fontSizes } from "../../../theme/fonts";
 
-const index = ({ method }) => {
+const index = ({ method, handleClickApple, handleClickGoogle }) => {
   return (
     <View style={styles.socialContainer}>
       <Text style={styles.socialDescription}>
@@ -20,13 +20,13 @@ const index = ({ method }) => {
       <View style={styles.socialMethodContainer}>
         <TouchableOpacity
           style={styles.methodBlock}
-          onPress={() => console.log(method)}
+          onPress={() => handleClickApple()}
         >
           <Apple />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.methodBlock}
-          onPress={() => console.log(method)}
+          onPress={() => handleClickGoogle()}
         >
           <Google />
         </TouchableOpacity>

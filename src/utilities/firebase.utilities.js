@@ -3,8 +3,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { app } from "../services/firebase";
-import { ERRORS_FIREBASE } from "../const/index";
+
+import { app } from "../services";
+import { ERRORS_FIREBASE } from "../const";
 
 const auth = getAuth(app);
 
