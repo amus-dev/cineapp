@@ -11,7 +11,7 @@ const LogInTemplate = () => {
     <SafeAreaView>
       <StatusBar />
       <View style={styles.container}>
-        <BackNavigate url="signup" text="Login" />
+        <BackNavigate text="Login" />
         <SocialSignLogin method="login" />
         <LogInForm />
       </View>

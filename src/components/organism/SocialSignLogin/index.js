@@ -1,15 +1,30 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-
+// Redux
+import { useDispatch } from "react-redux";
+import { loggedUser } from "../../../redux/actions";
+// Utilities
+import { signInAuthGoogle } from "../../../utilities";
 // Icons
-import Apple from "../../../assets/images/@icons/Apple";
 import Google from "../../../assets/images/@icons/Google";
-
 // Theme
 import { MEDIUM_GRAY, GRAY } from "../../../theme/color";
 import { fontSizes } from "../../../theme/fonts";
 
-const index = ({ method, handleClickApple, handleClickGoogle }) => {
+const index = ({ method }) => {
+  const dispatch = useDispatch();
+
+  const signInWithGoogle = async () => {
+    try {
+      const response = await signInAuthGoogle();
+      if (response) {
+        dispatch(loggedUser({ isLogged: true, dataUser: response }));
+      }
+    } catch (error) {
+      dispatch(loggedUser({ isLogged: false, dataUser: null }));
+    }
+  };
+
   return (
     <View style={styles.socialContainer}>
       <Text style={styles.socialDescription}>
@@ -20,13 +35,7 @@ const index = ({ method, handleClickApple, handleClickGoogle }) => {
       <View style={styles.socialMethodContainer}>
         <TouchableOpacity
           style={styles.methodBlock}
-          onPress={() => handleClickApple()}
-        >
-          <Apple />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.methodBlock}
-          onPress={() => handleClickGoogle()}
+          onPress={() => signInWithGoogle()}
         >
           <Google />
         </TouchableOpacity>
@@ -39,6 +48,8 @@ export default index;
 
 const styles = StyleSheet.create({
   socialContainer: {
+    display: "flex",
+    alignItems: "center",
     marginTop: 40,
   },
   socialDescription: {

@@ -5,11 +5,11 @@ import { useNavigation } from "@react-navigation/native";
 import ArrowLeft from "../../../assets/images/@icons/ArrowLeft";
 import { fontSizes } from "../../../theme/fonts";
 
-const index = ({ url, text }) => {
+const index = ({ text }) => {
   const navigation = useNavigation();
   return (
     <View style={styles.contentBackNavigate}>
-      <TouchableOpacity onPress={() => url && navigation.navigate(url)}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
         <ArrowLeft />
       </TouchableOpacity>
       <Text style={styles.backNavigateText}>{text}</Text>
