@@ -7,7 +7,8 @@ import UserStack from "./UserStack";
 
 const Navigation = () => {
   const { userIsLogged } = useSelector((state) => state.userReducer);
-  return userIsLogged ? <UserStack /> : <AuthStack />;
+  // TO DO: Remove validate logged
+  return !userIsLogged ? <UserStack /> : <AuthStack />;
 };
 
 export default Navigation;
