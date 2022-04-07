@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-
+// Organism
+import NavFilters from "../../organism/NavFilters";
 // Molecules
 import InputSearch from "../../molecules/InputSearch";
 
@@ -8,6 +9,7 @@ const HomeTemplate = () => {
   return (
     <View style={styles.container}>
       <InputSearch />
+      <NavFilters />
     </View>
   );
 };
