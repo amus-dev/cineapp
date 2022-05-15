@@ -1,8 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React from 'react'
 
-import { MEDIUM_GRAY, WHITE } from "../../../theme/color";
-import { fontSizes } from "../../../theme/fonts";
+import { MEDIUM_GRAY, WHITE } from '../../../theme/color'
+import { fontSizes } from '../../../theme/fonts'
 
 const index = ({ description, outstanding, onClick }) => {
   return (
@@ -12,17 +12,17 @@ const index = ({ description, outstanding, onClick }) => {
         <Text style={styles.textBold}>{outstanding}</Text>
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
-export default index;
+export default index
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 20,
   },
   text: {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   textBold: {
     color: WHITE,
     fontSize: fontSizes.regular,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     paddingLeft: 6,
   },
-});
+})

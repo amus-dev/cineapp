@@ -1,39 +1,39 @@
-import { StyleSheet, View } from "react-native";
-import React from "react";
-import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, View } from 'react-native'
+import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 // Molecules
-import Button from "../../molecules/Button";
+import Button from '../../molecules/Button'
 // Themes images
-import Logo from "../../../assets/images/@icons/Logo";
-import { BLACK } from "../../../theme/color";
+import Logo from '../../../assets/images/@icons/Logo'
+import { BLACK } from '../../../theme/color'
 
 const WelcomeTemplate = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
   return (
     <View style={styles.container}>
       <Logo />
       <Button
         style={styles.btn}
-        text="Comenzar"
-        handleClick={() => navigation.navigate("signup")}
+        text='Comenzar'
+        handleClick={() => navigation.navigate('signup')}
       />
     </View>
-  );
-};
+  )
+}
 
-export default WelcomeTemplate;
+export default WelcomeTemplate
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    height: "100%",
+    display: 'flex',
+    height: '100%',
     backgroundColor: BLACK,
-    alignItems: "center",
-    justifyContent: "space-around",
+    alignItems: 'center',
+    justifyContent: 'space-around',
   },
   btn: {
-    position: "absolute",
+    position: 'absolute',
     bottom: 0,
     marginTop: 20,
   },
-});
+})

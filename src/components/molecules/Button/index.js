@@ -1,26 +1,26 @@
-import React from "react";
-import { Button } from "react-native-paper";
+import React from 'react'
+import { Button } from 'react-native-paper'
 
-import { ORANGE, WHITE } from "../../../theme/color";
+import { ORANGE, WHITE } from '../../../theme/color'
 
 const ButtonMovit = ({ text, bgButton, textColor, handleClick }) => {
   return (
     <Button
-      mode="contained"
+      mode='contained'
       onPress={() => handleClick()}
       color={bgButton}
-      labelStyle={{ color: textColor, fontWeight: "bold" }}
-      contentStyle={{ width: "100%" }}
+      labelStyle={{ color: textColor, fontWeight: 'bold' }}
+      contentStyle={{ width: '100%' }}
     >
       {text}
     </Button>
-  );
-};
+  )
+}
 
 ButtonMovit.defaultProps = {
-  text: "",
+  text: '',
   bgButton: ORANGE,
   textColor: WHITE,
-};
+}
 
-export default ButtonMovit;
+export default ButtonMovit

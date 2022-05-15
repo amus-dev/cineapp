@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
-import React from "react";
-import { TextInput } from "react-native-paper";
+import { StyleSheet } from 'react-native'
+import React from 'react'
+import { TextInput } from 'react-native-paper'
 
 // Themes
-import { GRAY, GOLD, MEDIUM_GRAY } from "../../../theme/color";
+import { GRAY, GOLD, MEDIUM_GRAY } from '../../../theme/color'
 
 const index = ({ label, placeholder, onChange, value }) => {
   return (
@@ -19,16 +19,16 @@ const index = ({ label, placeholder, onChange, value }) => {
         },
       }}
       value={value}
-      onChangeText={(text) => onChange(text)}
+      onChangeText={text => onChange(text)}
     />
-  );
-};
+  )
+}
 
-export default index;
+export default index
 
 index.defaultProps = {
-  text: "Volver",
-};
+  text: 'Volver',
+}
 
 const styles = StyleSheet.create({
   input: {
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: MEDIUM_GRAY,
   },
-});
+})

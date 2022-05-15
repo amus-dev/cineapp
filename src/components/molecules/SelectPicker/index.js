@@ -1,36 +1,37 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import RNPickerSelect from "react-native-picker-select";
-import { Chevron } from "react-native-shapes";
+import { StyleSheet } from 'react-native'
+import React from 'react'
+import RNPickerSelect from 'react-native-picker-select'
+import { Chevron } from 'react-native-shapes'
 
-import { WHITE, DARK } from "../../../theme/color";
+import { WHITE, DARK } from '../../../theme/color'
 
 const index = () => {
   return (
     <RNPickerSelect
       placeholder={{
-        label: "Category",
+        label: 'Category',
         value: null,
       }}
-      onValueChange={(value) => console.log(value)}
+      onValueChange={value => console.log(value)}
       style={{
         ...pickerSelectStyles,
+        width: 200,
         iconContainer: {
           top: 20,
           right: 15,
         },
       }}
       items={[
-        { label: "Terror", value: "terror" },
-        { label: "Drama", value: "drama" },
-        { label: "Acción", value: "accion" },
+        { label: 'Terror', value: 'terror' },
+        { label: 'Drama', value: 'drama' },
+        { label: 'Acción', value: 'accion' },
       ]}
       Icon={() => <Chevron size={1.2} color={WHITE} />}
     />
-  );
-};
+  )
+}
 
-export default index;
+export default index
 
 const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
@@ -53,4 +54,4 @@ const pickerSelectStyles = StyleSheet.create({
     backgroundColor: DARK,
     paddingRight: 30, // to ensure the text is never behind the icon
   },
-});
+})

@@ -1,8 +1,8 @@
-import { StyleSheet, View } from "react-native";
-import React from "react";
+import { StyleSheet, View } from 'react-native'
+import React from 'react'
 
 // Molecules
-import SelectPicker from "../../molecules/SelectPicker";
+import SelectPicker from '../../molecules/SelectPicker'
 
 const index = () => {
   return (
@@ -11,16 +11,15 @@ const index = () => {
       <SelectPicker />
       <SelectPicker />
     </View>
-  );
-};
+  )
+}
 
-export default index;
+export default index
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    display: 'flex',
+    justifyContent: 'space-between',
     marginTop: 40,
   },
-});
+})

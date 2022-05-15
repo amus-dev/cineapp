@@ -1,61 +1,61 @@
-import { StyleSheet, View } from "react-native";
-import React, { useState, useRef } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, View } from 'react-native'
+import React, { useState, useRef } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
-//Firebase Functions
-import { createAccount, viewError } from "../../../utilities";
+// Firebase Functions
+import { createAccount, viewError } from '../../../utilities'
 
-//Molecules
-import Toast from "../../molecules/Toast";
-import InputText from "../../molecules/InputText";
-import InputPassword from "../../molecules/InputPassword";
-import Button from "../../molecules/Button";
-import TextAccount from "../../molecules/TextAccount";
+// Molecules
+import Toast from '../../molecules/Toast'
+import InputText from '../../molecules/InputText'
+import InputPassword from '../../molecules/InputPassword'
+import Button from '../../molecules/Button'
+import TextAccount from '../../molecules/TextAccount'
 
 const index = () => {
-  const navigation = useNavigation();
-  const toastRef = useRef();
+  const navigation = useNavigation()
+  const toastRef = useRef()
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleClickCreateAccount = async () => {
     try {
-      const response = await createAccount(email, password);
+      const response = await createAccount(email, password)
       if (response.uid) {
-        cleanInputs();
-        toastRef.current.show("¡Cuenta creada!", 1000, () => {
-          navigation.navigate("login");
-        });
+        cleanInputs()
+        toastRef.current.show('¡Cuenta creada!', 1000, () => {
+          navigation.navigate('login')
+        })
       }
     } catch (error) {
-      toastRef.current.show(viewError(error));
+      toastRef.current.show(viewError(error))
     }
-  };
+  }
 
   const cleanInputs = () => {
-    setEmail("");
-    setPassword("");
-  };
+    setEmail('')
+    setPassword('')
+  }
 
   return (
     <View style={styles.form}>
       <Toast
         toastRef={toastRef}
-        position="top"
-        backgroundColor="white"
-        colorText="black"
+        position='top'
+        backgroundColor='white'
+        colorText='black'
       />
       <View>
         <InputText
-          label="Email"
-          placeholder="Enter your email"
+          label='Email'
+          placeholder='Enter your email'
           value={email}
           onChange={setEmail}
         />
         <InputPassword
-          label="Password"
-          placeholder="Enter your password"
+          label='Password'
+          placeholder='Enter your password'
           value={password}
           onChange={setPassword}
         />
@@ -63,25 +63,25 @@ const index = () => {
       <View>
         <Button
           style={styles.btn}
-          text="Create Account"
+          text='Create Account'
           handleClick={handleClickCreateAccount}
         />
         <TextAccount
-          description="Already have an account?"
-          outstanding="Login"
-          onClick={() => navigation.navigate("login")}
+          description='Already have an account?'
+          outstanding='Login'
+          onClick={() => navigation.navigate('login')}
         />
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default index;
+export default index
 
 const styles = StyleSheet.create({
   form: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-between",
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
-});
+})

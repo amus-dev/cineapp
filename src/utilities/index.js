@@ -1,2 +1,2 @@
-export * from "./firebase.utilities";
-export * from "./google.auth.utilities";
+export * from './firebase.utilities'
+export * from './google.auth.utilities'

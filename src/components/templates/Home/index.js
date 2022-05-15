@@ -1,26 +1,30 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { StyleSheet, SafeAreaView, View } from 'react-native'
+import React from 'react'
 // Organism
-import NavFilters from "../../organism/NavFilters";
+import NavFilters from '../../organism/NavFilters'
+import Slider from '../../organism/Slider'
 // Molecules
-import InputSearch from "../../molecules/InputSearch";
+import InputSearch from '../../molecules/InputSearch'
 
 const HomeTemplate = () => {
   return (
-    <View style={styles.container}>
-      <InputSearch />
-      <NavFilters />
-    </View>
-  );
-};
+    <SafeAreaView>
+      <View style={styles.container}>
+        <InputSearch />
+        <NavFilters />
+        <Slider />
+      </View>
+    </SafeAreaView>
+  )
+}
 
-export default HomeTemplate;
+export default HomeTemplate
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    flexDirection: "column",
-    height: "100%",
-    padding: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    paddingVertical: 10,
   },
-});
+})

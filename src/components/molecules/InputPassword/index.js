@@ -1,12 +1,12 @@
-import { StyleSheet } from "react-native";
-import React, { useState } from "react";
-import { TextInput } from "react-native-paper";
+import { StyleSheet } from 'react-native'
+import React, { useState } from 'react'
+import { TextInput } from 'react-native-paper'
 
 // Themes
-import { GRAY, GOLD, MEDIUM_GRAY } from "../../../theme/color";
+import { GRAY, GOLD, MEDIUM_GRAY } from '../../../theme/color'
 
 const index = ({ label, placeholder, onChange, value }) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true)
 
   return (
     <TextInput
@@ -23,18 +23,18 @@ const index = ({ label, placeholder, onChange, value }) => {
       }}
       right={
         <TextInput.Icon
-          name={isVisible ? "eye" : "eye-off"}
+          name={isVisible ? 'eye' : 'eye-off'}
           color={GOLD}
           onPress={() => setIsVisible(!isVisible)}
         />
       }
       value={value}
-      onChangeText={(text) => onChange(text)}
+      onChangeText={text => onChange(text)}
     />
-  );
-};
+  )
+}
 
-export default index;
+export default index
 
 const styles = StyleSheet.create({
   input: {
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     color: MEDIUM_GRAY,
   },
-});
+})

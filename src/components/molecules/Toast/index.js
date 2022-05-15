@@ -1,5 +1,5 @@
-import React from "react";
-import Toast from "react-native-easy-toast";
+import React from 'react'
+import Toast from 'react-native-easy-toast'
 
 const index = ({ toastRef, position, backgroundColor, colorText }) => {
   return (
@@ -7,11 +7,11 @@ const index = ({ toastRef, position, backgroundColor, colorText }) => {
       ref={toastRef}
       position={position}
       opacity={0.9}
-      style={{ backgroundColor: backgroundColor }}
+      style={{ backgroundColor }}
       textStyle={{ color: colorText }}
       fadeOutDuration={1000}
     />
-  );
-};
+  )
+}
 
-export default index;
+export default index

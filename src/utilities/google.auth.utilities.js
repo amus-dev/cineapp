@@ -1,17 +1,18 @@
-import * as Google from "expo-google-app-auth";
-import { googleConfig } from "../services";
+/* eslint-disable no-useless-catch */
+import * as Google from 'expo-google-app-auth'
+import { googleConfig } from '../services'
 
 export const signInAuthGoogle = async () => {
   try {
-    const result = await Google.logInAsync(googleConfig);
-    const { type, user, photoUrl } = result;
-    if (type === "success") {
-      return user;
+    const result = await Google.logInAsync(googleConfig)
+    const { type, user } = result
+    if (type === 'success') {
+      return user
     } else {
-      const message = "¡Inicio sesión Google cancelado!";
-      throw message;
+      const message = '¡Inicio sesión Google cancelado!'
+      throw message
     }
   } catch (error) {
-    throw error;
+    throw error
   }
-};
+}

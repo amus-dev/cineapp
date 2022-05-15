@@ -1,1 +1,1 @@
-export * from "./firebase.errors.conts";
+export * from './firebase.errors.conts'

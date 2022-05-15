@@ -2,12 +2,12 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-} from "firebase/auth";
+} from 'firebase/auth'
 
-import { app } from "../services";
-import { ERRORS_FIREBASE } from "../const";
+import { app } from '../services'
+import { ERRORS_FIREBASE } from '../const'
 
-const auth = getAuth(app);
+const auth = getAuth(app)
 
 export const createAccount = async (email, password) => {
   try {
@@ -15,13 +15,13 @@ export const createAccount = async (email, password) => {
       auth,
       email,
       password
-    );
-    return userCredential.user;
+    )
+    return userCredential.user
   } catch (error) {
-    const errorCode = error.code;
-    throw errorCode;
+    const errorCode = error.code
+    throw errorCode
   }
-};
+}
 
 export const loginAccount = async (email, password) => {
   try {
@@ -29,16 +29,16 @@ export const loginAccount = async (email, password) => {
       auth,
       email,
       password
-    );
-    return userCredential.user;
+    )
+    return userCredential.user
   } catch (error) {
-    const errorCode = error.code;
-    console.log(errorCode);
-    throw errorCode;
+    const errorCode = error.code
+    console.log(errorCode)
+    throw errorCode
   }
-};
+}
 
-export const viewError = (error) => {
-  const result = ERRORS_FIREBASE.filter((err) => err.type == error).shift();
-  return result.message;
-};
+export const viewError = error => {
+  const result = ERRORS_FIREBASE.filter(err => err.type === error).shift()
+  return result.message
+}
